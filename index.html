@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONSTER SURVIVORS - 生存战斗游戏 | 怪物围城 | 像素冒险</title>
+    <meta name="description" content="MONSTER SURVIVORS是一款刺激的生存战斗游戏，在怪物围城的世界中展开像素冒险，挑战自我极限！">
+    <meta name="keywords" content="MONSTER SURVIVORS, 生存战斗游戏, 怪物围城, 像素冒险">
+    
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "MONSTER SURVIVORS",
+      "description": "一款刺激的生存战斗游戏，在怪物围城的世界中展开像素冒险",
+      "genre": ["生存", "动作", "冒险"],
+      "url": "https://game1688.one",
+      "image": "https://game1688.one/images/monster-survivors-cover.webp",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "CNY",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- 内联AOS动画样式 -->
+    <style>
+        [data-aos] {
+            opacity: 0;
+            transition-property: opacity, transform;
+            transition-duration: 0.8s;
+        }
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+        [data-aos="fade-up"] {
+            transform: translateY(20px);
+        }
+        [data-aos="fade-up"].aos-animate {
+            transform: translateY(0);
+        }
+        [data-aos="zoom-in"] {
+            transform: scale(0.9);
+        }
+        [data-aos="zoom-in"].aos-animate {
+            transform: scale(1);
+        }
+        [data-aos="fade-right"] {
+            transform: translateX(-20px);
+        }
+        [data-aos="fade-right"].aos-animate {
+            transform: translateX(0);
+        }
+        [data-aos="fade-left"] {
+            transform: translateX(20px);
+        }
+        [data-aos="fade-left"].aos-animate {
+            transform: translateX(0);
+        }
+    </style>
+    
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    
+    <!-- 备用语言链接 -->
+    <link rel="alternate" hreflang="en" href="https://game1688.one/en/">
+    <link rel="alternate" hreflang="ja" href="https://game1688.one/ja/">
+    <link rel="canonical" href="https://game1688.one">
+</head>
+<body class="bg-gray-900 text-white font-sans antialiased overflow-x-hidden">
+    <!-- 粒子背景 -->
+    <div id="particles-js" class="fixed inset-0 z-0"></div>
+    
+    <!-- 顶部导航 -->
+    <header class="sticky top-0 z-50 transition-all duration-300" id="main-header">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="/" class="flex items-center space-x-2">
+                <div class="logo-placeholder h-10 w-10 flex items-center justify-center rounded-md bg-gradient-to-r from-blue-500 to-yellow-500 text-white font-bold text-sm">MS</div>
+                <span class="text-xl font-bold tracking-wider text-gradient">MONSTER SURVIVORS</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#features" class="nav-link">游戏特性</a>
+                <a href="#gameplay" class="nav-link">游戏演示</a>
+                <a href="#reviews" class="nav-link">玩家评价</a>
+                <a href="#stats" class="nav-link">游戏数据</a>
+                <a href="#community" class="nav-link">社区</a>
+                <a href="https://cloud.freezenova.com/games/2025/unity/monster-survivors/index.html" class="play-button">立即游玩</a>
+            </div>
+            
+            <!-- 移动端汉堡菜单 -->
+            <button class="md:hidden hamburger-menu" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        
+        <!-- 移动端菜单 -->
+        <div class="mobile-menu hidden md:hidden">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#features" class="nav-link">游戏特性</a>
+                <a href="#gameplay" class="nav-link">游戏演示</a>
+                <a href="#reviews" class="nav-link">玩家评价</a>
+                <a href="#stats" class="nav-link">游戏数据</a>
+                <a href="#community" class="nav-link">社区</a>
+                <a href="https://cloud.freezenova.com/games/2025/unity/monster-survivors/index.html" class="play-button w-full text-center">立即游玩</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="parallax-layer bg-layer-css" data-depth="0.1"></div>
+            <div class="parallax-layer mid-layer-css" data-depth="0.2"></div>
+            <div class="parallax-layer fg-layer-css" data-depth="0.3"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 z-10 text-center" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gradient">MONSTER SURVIVORS</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">在怪物围城的世界中，展开一场惊心动魄的像素冒险，挑战自我极限！</p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://cloud.freezenova.com/games/2025/unity/monster-survivors/index.html" class="primary-button">
+                    <span class="btn-text">立即游玩</span>
+                    <span class="btn-shine"></span>
+                </a>
+                <a href="#gameplay" class="secondary-button">
+                    <span class="btn-text">观看演示</span>
+                    <span class="btn-shine"></span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+    
+    <!-- 游戏特性 -->
+    <section id="features" class="py-20 bg-gray-800 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">游戏特性</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">无尽挑战</h3>
+                    <p>面对无尽涌来的怪物浪潮，每一局游戏都带来全新体验，测试你的生存技巧和策略。</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">角色定制</h3>
+                    <p>解锁多种独特角色，每个角色拥有不同的技能和特性，打造属于你的战斗风格。</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">技能进化</h3>
+                    <p>随着游戏进程，解锁并升级各种强大技能，创造令人惊叹的连击和组合效果。</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">排行榜系统</h3>
+                    <p>挑战全球玩家，争夺排行榜榜首，展示你的游戏技巧和战略思维。</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">精美像素画</h3>
+                    <p>复古而精美的像素风格，带来独特的视觉体验，每个细节都经过精心设计。</p>
+                </div>
+                
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">动感音效</h3>
+                    <p>沉浸式音效和背景音乐，为游戏增添紧张刺激的氛围，提升游戏体验。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 游戏演示 -->
+    <section id="gameplay" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">游戏演示</h2>
+            
+            <div class="mt-12 relative" data-aos="zoom-in">
+                <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl bg-gray-800 flex items-center justify-center">
+                    <div class="text-center p-8">
+                        <div class="game-placeholder-icon mb-4">
+                            <svg class="w-16 h-16 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">游戏演示区域</h3>
+                        <p class="mb-6 text-gray-400">点击下方按钮访问游戏页面</p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex justify-center space-x-4">
+                    <button class="quality-btn active" data-quality="low">低画质</button>
+                    <button class="quality-btn" data-quality="medium">中画质</button>
+                    <button class="quality-btn" data-quality="high">高画质</button>
+                </div>
+                
+                <div class="mt-8 text-center">
+                    <a href="https://cloud.freezenova.com/games/2025/unity/monster-survivors/index.html" target="_blank" rel="noopener noreferrer" class="primary-button inline-block">
+                        <span class="btn-text">访问游戏</span>
+                        <span class="btn-shine"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 玩家评价 -->
+    <section id="reviews" class="py-20 bg-gray-800 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">玩家评价</h2>
+            
+            <div class="mt-12 reviews-slider" data-aos="fade-up">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"这是我玩过最上瘾的生存游戏之一，每次死亡都让我想再来一局！角色进化系统非常有深度。"</p>
+                                <div class="review-author">
+                                    <div class="avatar-placeholder avatar-1" aria-label="玩家头像"></div>
+                                    <div>
+                                        <h4 class="font-bold">李小明</h4>
+                                        <p class="text-sm opacity-75">游戏时间: 120小时</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-stars">★★★★★</div>
+                                <p class="review-text">"像素风格做得非常精美，音效也很到位。每次升级时的选择都很有策略性，不同角色的玩法差异很大。"</p>
+                                <div class="review-author">
+                                    <div class="avatar-placeholder avatar-2" aria-label="玩家头像"></div>
+                                    <div>
+                                        <h4 class="font-bold">张小红</h4>
+                                        <p class="text-sm opacity-75">游戏时间: 85小时</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="review-card">
+                                <div class="review-stars">★★★★☆</div>
+                                <p class="review-text">"非常容易上手但又很难精通的游戏，每次都能发现新的技能组合。唯一的缺点是后期怪物有点太多了。"</p>
+                                <div class="review-author">
+                                    <div class="avatar-placeholder avatar-3" aria-label="玩家头像"></div>
+                                    <div>
+                                        <h4 class="font-bold">王大力</h4>
+                                        <p class="text-sm opacity-75">游戏时间: 56小时</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 游戏数据 -->
+    <section id="stats" class="py-20 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">游戏数据</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-value" id="player-count">1,000,000+</div>
+                    <div class="stat-label">全球玩家</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-value" id="playtime">5,000,000+</div>
+                    <div class="stat-label">游戏小时数</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-value" id="monster-kills">10,000,000,000+</div>
+                    <div class="stat-label">怪物击杀数</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-value" id="avg-rating">4.8/5</div>
+                    <div class="stat-label">平均评分</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 社区 -->
+    <section id="community" class="py-20 bg-gray-800 relative">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title" data-aos="fade-up">加入社区</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
+                <div data-aos="fade-right">
+                    <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-2xl bg-gray-800 flex items-center justify-center">
+                        <div class="text-center p-8">
+                            <div class="twitch-placeholder-icon mb-4">
+                                <svg class="w-16 h-16 mx-auto text-purple-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714Z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Twitch直播</h3>
+                            <p class="mb-6 text-gray-400">关注我们的直播频道获取最新游戏内容</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col justify-center" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-6">与玩家社区联系</h3>
+                    <p class="mb-8">加入我们充满活力的社区，分享游戏技巧，参与讨论，获取最新更新，与其他玩家一起体验MONSTER SURVIVORS的乐趣！</p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="#" class="social-btn discord">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2914a.077.077 0 01-.0066.1277c-.5979.3428-1.2194.6447-1.8722.8923a.076.076 0 00-.0416.1057c.3529.699.7644 1.3638 1.226 1.9942a.0777.0777 0 00.0842.0276c1.9516-.6066 3.9401-1.5218 5.9929-3.0294a.0824.0824 0 00.0312-.0561c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189z"></path>
+                            </svg>
+                            <span>Discord社区</span>
+                        </a>
+                        <a href="#" class="social-btn twitter">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+                            </svg>
+                            <span>Twitter关注</span>
+                        </a>
+                        <a href="#" class="social-btn steam">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"></path>
+                            </svg>
+                            <span>Steam社区</span>
+                        </a>
+                        <a href="#" class="social-btn youtube">
+                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                            </svg>
+                            <span>YouTube频道</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <div class="newsletter-form">
+                            <h4 class="text-lg font-bold mb-2">订阅更新</h4>
+                            <p class="mb-4 text-sm">获取游戏更新、活动和独家内容</p>
+                            <form class="flex">
+                                <input type="email" placeholder="输入你的邮箱" class="flex-grow p-2 rounded-l-md bg-gray-700 border-0 focus:ring-2 focus:ring-blue-500">
+                                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-r-md transition-colors">订阅</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="logo-placeholder h-10 w-10 mb-4 flex items-center justify-center rounded-md bg-gradient-to-r from-blue-500 to-yellow-500 text-white font-bold text-sm">MS</div>
+                    <p class="text-gray-400 text-sm">© 2025 MONSTER SURVIVORS. 保留所有权利。</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">链接</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">关于我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">支持</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">法律</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">隐私政策</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">使用条款</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie政策</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">语言</h4>
+                    <select class="bg-gray-800 text-white border-0 rounded p-2 w-full" title="选择语言" aria-label="选择语言">
+                        <option value="zh-CN" selected>简体中文</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+                <p>MONSTER SURVIVORS 不是一个真实的游戏。此网站仅用于展示目的。</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- 回到顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full p-3 shadow-lg hidden" aria-label="回到顶部" title="回到顶部">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+    
+    <!-- 折扣码弹窗 -->
+    <div id="discount-modal" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-75"></div>
+        <div class="bg-gray-800 p-8 rounded-lg shadow-2xl relative z-10 max-w-md w-full">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white" aria-label="关闭" title="关闭">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            <h3 class="text-2xl font-bold mb-4">获取20%折扣码！</h3>
+            <p class="mb-6">订阅我们的通讯，获取游戏独家折扣码和最新消息。</p>
+            <form class="space-y-4">
+                <input type="email" placeholder="输入你的邮箱" class="w-full p-3 rounded-md bg-gray-700 border-0 focus:ring-2 focus:ring-blue-500">
+                <div class="flex items-center">
+                    <input type="checkbox" id="consent" class="mr-2">
+                    <label for="consent" class="text-sm text-gray-300">我同意接收营销邮件和促销信息</label>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-md transition-colors">获取折扣码</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- 内联JavaScript -->
+    <script>
+        // 简化版的AOS初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            // 简单的AOS替代实现
+            const animatedElements = document.querySelectorAll('[data-aos]');
+            
+            function checkIfInView() {
+                animatedElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementBottom = element.getBoundingClientRect().bottom;
+                    const isVisible = (elementTop <= window.innerHeight * 0.8) && (elementBottom >= 0);
+                    
+                    if (isVisible) {
+                        element.classList.add('aos-animate');
+                    }
+                });
+            }
+            
+            // 初始检查
+            setTimeout(checkIfInView, 100);
+            
+            // 滚动时检查
+            window.addEventListener('scroll', checkIfInView);
+            
+            // 移动端菜单
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            if (hamburger && mobileMenu) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // 点击菜单项后关闭菜单
+                const menuItems = mobileMenu.querySelectorAll('a');
+                menuItems.forEach(item => {
+                    item.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+            
+            // 回到顶部按钮
+            const backToTop = document.getElementById('back-to-top');
+            
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.remove('hidden');
+                    } else {
+                        backToTop.classList.add('hidden');
+                    }
+                });
+                
+                backToTop.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // 折扣码弹窗
+            const discountModal = document.getElementById('discount-modal');
+            const closeModal = document.getElementById('close-modal');
+            
+            if (discountModal && closeModal) {
+                // 5秒后显示弹窗
+                setTimeout(function() {
+                    discountModal.classList.remove('hidden');
+                }, 5000);
+                
+                // 关闭弹窗
+                closeModal.addEventListener('click', function() {
+                    discountModal.classList.add('hidden');
+                });
+                
+                // 点击弹窗外部关闭
+                discountModal.addEventListener('click', function(e) {
+                    if (e.target === discountModal) {
+                        discountModal.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
